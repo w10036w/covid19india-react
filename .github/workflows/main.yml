@@ -1,0 +1,14 @@
+name: ci
+
+on: [pull_request]
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [18.x, 20.x]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Repo Visualizer
+        uses: githubocto/repo-visualizer@0.9.1
